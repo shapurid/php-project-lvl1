@@ -1,0 +1,15 @@
+{
+    "name": "hexlet/code",
+    "bin": [
+        "bin/brain-games"
+      ],      
+    "authors": [
+        {
+            "name": "Ivan Korney",
+            "email": "shapurid@yandex.ru"
+        }
+    ],
+    "description": "brain-games",
+    "license": "MIT",
+    "require": {}
+}
