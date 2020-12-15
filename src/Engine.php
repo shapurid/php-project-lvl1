@@ -19,11 +19,11 @@ function engine($description, $game)
         if ($answerOfUser === $answer) {
             line('Correct!');
         } else {
-            line("{$answerOfUser} is wrong answer!");
-            line("Let's try again {$name}");
+            line('"%s" is wrong answer!', $answerOfUser);
+            line("Let's try again %s", $name);
             return;
         }
     }
-    line("Congratulations");
+    line('Congratulations, %s!', $name);
     return;
 }
