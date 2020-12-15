@@ -14,4 +14,3 @@ use function Brain\Games\Engine\engine;
 use const Brain\Games\brainProgression\DESCRIPTION;
 
 engine(DESCRIPTION, 'Brain\Games\brainProgression\game');
-
