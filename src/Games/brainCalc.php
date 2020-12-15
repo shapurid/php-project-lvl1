@@ -28,6 +28,6 @@ function game(): array
     }
     return [
         'question' => $question,
-        'answer' => (string)$answer
+        'answer' => strval($answer)
     ];
 }
