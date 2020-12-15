@@ -1,7 +1,8 @@
 {
     "name": "hexlet/code",
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-calc"
       ],      
     "authors": [
         {
@@ -12,9 +13,11 @@
     "description": "brain-games",
     "license": "MIT",
     "autoload": {
-      "psr-4": {
-          "Brain\\Games\\": "src/"
-      }
+      "files": [
+          "src/Cli.php",
+          "src/Engine.php",
+          "src/Games/brain-calc.php"
+      ]
     },
     "scripts": {
       "phpcs": "phpcs"
