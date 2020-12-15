@@ -20,7 +20,7 @@ function engine($description, $game)
             line('Correct!');
         } else {
             line('"%s" is wrong answer!', $answerOfUser);
-            line("Let's try again %s", $name);
+            line("Let's try again, %s.", $name);
             return;
         }
     }
