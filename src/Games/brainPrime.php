@@ -4,7 +4,7 @@ namespace Brain\Games\brainPrime;
 
 const DESCRIPTION = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-function isPrime($number)
+function isPrime(int $number): bool
 {
     if ($number < 2) {
         return false;
@@ -19,7 +19,7 @@ function isPrime($number)
     return true;
 }
 
-function game()
+function game(): array
 {
     $number = rand(2, 101);
     $answer = isPrime($number) ? 'yes' : 'no';

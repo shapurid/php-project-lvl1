@@ -4,7 +4,7 @@ namespace Brain\Games\brainProgression;
 
 const DESCRIPTION = 'What number is missing in the progression?';
 
-function game()
+function game(): array
 {
     $startOfProgression = rand(1, 99);
     $step = rand(2, 10);

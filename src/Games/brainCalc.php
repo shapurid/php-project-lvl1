@@ -4,7 +4,7 @@ namespace Brain\Games\brainCalc;
 
 const DESCRIPTION = 'What is the result of the expression?';
 
-function game()
+function game(): array
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);

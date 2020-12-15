@@ -4,12 +4,12 @@ namespace Brain\Games\brainGcd;
 
 const DESCRIPTION = 'Find the greatest common divisor of given numbers.';
 
-function gcd($a, $b)
+function gcd(int $a, int $b): int
 {
     return $b ? gcd($b, $a % $b) : $a;
 }
 
-function game()
+function game(): array
 {
     $number1 = rand(1, 50);
     $number2 = rand(1, 100);

@@ -9,7 +9,7 @@ use function cli\prompt;
 
 const NUMBER_OF_QUESTIONS = 3;
 
-function engine($description, $game)
+function engine(string $description, callable $game): void
 {
     $name = Cli\greet();
     line($description);
@@ -26,5 +26,4 @@ function engine($description, $game)
         }
     }
     line('Congratulations, %s!', $name);
-    return;
 }
