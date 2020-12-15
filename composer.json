@@ -4,7 +4,8 @@
         "bin/brain-games",
         "bin/brain-calc",
         "bin/brain-even",
-        "bin/brain/gcd"
+        "bin/brain/gcd",
+        "bin/brain-progression"
       ],      
     "authors": [
         {
@@ -20,7 +21,8 @@
           "src/Engine.php",
           "src/Games/brainCalc.php",
           "src/Games/brainEven.php",
-          "src/Games/brainGcd.php"
+          "src/Games/brainGcd.php",
+          "src/Games/brainProgression.php"
       ]
     },
     "scripts": {

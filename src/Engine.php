@@ -15,11 +15,12 @@ function engine($description, $game)
     line($description);
     for ($i = 1; $i <= NUMBER_OF_QUESTIONS; $i += 1) {
         ['answer' => $answer, 'question' => $question] = $game();
-        $answerOfUser = prompt($question);
+        line('Question: %s', $question);
+        $answerOfUser = prompt('Your answer');
         if ($answerOfUser === $answer) {
             line('Correct!');
         } else {
-            line('"%s" is wrong answer!', $answerOfUser);
+            line("'%s' is wrong answer! ;(. Correct answer was '%s'.", $answerOfUser, $answer);
             line("Let's try again, %s.", $name);
             return;
         }
