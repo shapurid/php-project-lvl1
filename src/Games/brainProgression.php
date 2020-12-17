@@ -1,23 +1,23 @@
 <?php
 
-namespace Brain\Games\brainProgression;
+namespace Brain\Games\Games\brainProgression;
 
 const DESCRIPTION = 'What number is missing in the progression?';
 
 function game(): array
 {
-    $startOfProgression = rand(1, 99);
+    $start = rand(1, 99);
     $step = rand(2, 10);
-    $lengthOfProgression = rand(5, 10);
-    $emptyPartIndex = rand(5, $lengthOfProgression) - 1;
+    $length = rand(5, 10);
+    $emptyPartIndex = rand(5, $length) - 1;
     $progression = [];
     $answer = 0;
-    for ($i = 0; $i < $lengthOfProgression; $i += 1, $startOfProgression += $step) {
+    for ($i = 0; $i < $length; $i += 1, $start += $step) {
         if ($i === $emptyPartIndex) {
             $progression[] = '..';
-            $answer = $startOfProgression;
+            $answer = $start;
         } else {
-            $progression[] = $startOfProgression;
+            $progression[] = $start;
         }
     }
     $question = implode(' ', $progression);

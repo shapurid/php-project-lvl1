@@ -1,6 +1,6 @@
 <?php
 
-namespace Brain\Games\brainEven;
+namespace Brain\Games\Games\brainEven;
 
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 

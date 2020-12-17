@@ -17,13 +17,12 @@ function engine(string $description, callable $game): void
         ['answer' => $answer, 'question' => $question] = $game();
         line('Question: %s', $question);
         $answerOfUser = prompt('Your answer');
-        if ($answerOfUser === $answer) {
-            line('Correct!');
-        } else {
+        if ($answerOfUser !== $answer) {
             line("'%s' is wrong answer! ;(. Correct answer was '%s'.", $answerOfUser, $answer);
             line("Let's try again, %s!", $name);
             return;
         }
+        line('Correct!');
     }
     line('Congratulations, %s!', $name);
 }

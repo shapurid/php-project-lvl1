@@ -1,33 +1,35 @@
 <?php
 
-namespace Brain\Games\brainCalc;
+namespace Brain\Games\Games\brainCalc;
+
+use Exception;
 
 const DESCRIPTION = 'What is the result of the expression?';
+
+function calculate($operator, $number1, $number2)
+{
+    switch ($operator) {
+        case '+':
+            return $number1 + $number2;
+        case '-':
+            return $number1 - $number2;
+        case '*':
+            return $number1 * $number2;
+        default:
+            throw new Exception("Unknown operator: '{$operator}'!");
+    }
+}
 
 function game(): array
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);
-    $charsOfExpression = ['+', '-', '*'];
-    $char = $charsOfExpression[array_rand($charsOfExpression, 1)];
-    $question = '';
-    $answer = 0;
-    switch ($char) {
-        case '+':
-            $question = "{$number1} + {$number2}";
-            $answer = $number1 + $number2;
-            break;
-        case '-':
-            $question = "{$number1} - {$number2}";
-            $answer = $number1 - $number2;
-            break;
-        default:
-            $question = "{$number1} * {$number2}";
-            $answer = $number1 * $number2;
-            break;
-    }
+    $availableOperators = ['+', '-', '*'];
+    $operator = $availableOperators[array_rand($availableOperators, 1)];
+    $answer = calculate($operator, $number1, $number2);
+    $question = "{$number1} {$operator} {$number2}";
     return [
         'question' => $question,
-        'answer' => strval($answer)
+        'answer' => (string)$answer
     ];
 }

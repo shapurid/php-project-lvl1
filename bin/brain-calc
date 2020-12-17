@@ -11,6 +11,6 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function Brain\Games\Engine\engine;
-use const Brain\Games\brainCalc\DESCRIPTION;
+use const Brain\Games\Games\brainCalc\DESCRIPTION;
 
-engine(DESCRIPTION, 'Brain\Games\brainCalc\game');
+engine(DESCRIPTION, 'Brain\Games\Games\brainCalc\game');
