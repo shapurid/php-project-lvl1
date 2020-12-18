@@ -6,7 +6,7 @@ use Exception;
 
 const DESCRIPTION = 'What is the result of the expression?';
 
-function calculate($operator, $number1, $number2)
+function calculate(string $operator, int $number1, int $number2): int
 {
     switch ($operator) {
         case '+':
