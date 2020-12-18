@@ -26,7 +26,7 @@ function game(): array
     $number2 = rand(1, 99);
     $availableOperators = ['+', '-', '*'];
     $randIndex = rand(0, count($availableOperators) - 1);
-    $operator = $availableOperators[array_rand($availableOperators)];
+    $operator = $availableOperators[$randIndex];
     $answer = calculate($operator, $number1, $number2);
     $question = "{$number1} {$operator} {$number2}";
     return [
