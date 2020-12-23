@@ -9,9 +9,11 @@ use function cli\prompt;
 
 const NUMBER_OF_QUESTIONS = 3;
 
-function engine(string $description, callable $game): void
+function startEngine(string $description, callable $game): void
 {
-    $name = Cli\greet();
+    line('Welcome to the Brain Games!');
+    $name = prompt('May I have your name?', 'Anonymous');
+    line('Hello, %s!', $name);
     line($description);
     for ($i = 1; $i <= NUMBER_OF_QUESTIONS; $i += 1) {
         ['answer' => $answer, 'question' => $question] = $game();

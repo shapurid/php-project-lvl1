@@ -4,7 +4,10 @@ namespace Brain\Games\Games\brainCalc;
 
 use Exception;
 
+use function Brain\Games\Engine\startEngine;
+
 const DESCRIPTION = 'What is the result of the expression?';
+const AVAILABLE_OPERATORS = ['+', '-', '*'];
 
 function calculate(string $operator, int $number1, int $number2): int
 {
@@ -20,17 +23,22 @@ function calculate(string $operator, int $number1, int $number2): int
     }
 }
 
-function game(): array
+function runGame(): array
 {
     $number1 = rand(1, 99);
     $number2 = rand(1, 99);
-    $availableOperators = ['+', '-', '*'];
-    $randIndex = rand(0, count($availableOperators) - 1);
-    $operator = $availableOperators[$randIndex];
+    $randIndex = array_rand(AVAILABLE_OPERATORS);
+    $operator = AVAILABLE_OPERATORS[$randIndex];
     $answer = calculate($operator, $number1, $number2);
     $question = "{$number1} {$operator} {$number2}";
     return [
         'question' => $question,
         'answer' => (string)$answer
     ];
+}
+
+function startBrainCalc()
+{
+    $game = __NAMESPACE__ . '\\' . 'runGame';
+    return startEngine(DESCRIPTION, $game);
 }

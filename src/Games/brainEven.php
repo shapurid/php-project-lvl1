@@ -2,6 +2,8 @@
 
 namespace Brain\Games\Games\brainEven;
 
+use function Brain\Games\Engine\startEngine;
+
 const DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
 
 function isEven(int $number): bool
@@ -9,7 +11,7 @@ function isEven(int $number): bool
     return $number % 2 === 0;
 }
 
-function game(): array
+function runGame(): array
 {
     $number = rand(1, 99);
     $answer = isEven($number) ? 'yes' : 'no';
@@ -17,4 +19,10 @@ function game(): array
         'question' => $number,
         'answer' => $answer
     ];
+}
+
+function startBrainEven()
+{
+    $game = __NAMESPACE__ . '\\' . 'runGame';
+    return startEngine(DESCRIPTION, $game);
 }
