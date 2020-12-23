@@ -23,8 +23,8 @@ function runGame(): array
     ];
 }
 
-function startBrainGcd()
+function startBrainGcd(): void
 {
     $game = __NAMESPACE__ . '\\' . 'runGame';
-    return startEngine(DESCRIPTION, $game);
+    startEngine(DESCRIPTION, $game);
 }

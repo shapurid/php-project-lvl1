@@ -31,8 +31,8 @@ function runGame(): array
     ];
 }
 
-function startBrainPrime()
+function startBrainPrime(): void
 {
     $game = __NAMESPACE__ . '\\' . 'runGame';
-    return startEngine(DESCRIPTION, $game);
+    startEngine(DESCRIPTION, $game);
 }

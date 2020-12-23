@@ -33,8 +33,8 @@ function runGame(): array
     ];
 }
 
-function startBrainProgression()
+function startBrainProgression(): void
 {
     $game = __NAMESPACE__ . '\\' . 'runGame';
-    return startEngine(DESCRIPTION, $game);
+    startEngine(DESCRIPTION, $game);
 }

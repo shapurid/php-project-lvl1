@@ -21,8 +21,8 @@ function runGame(): array
     ];
 }
 
-function startBrainEven()
+function startBrainEven(): void
 {
     $game = __NAMESPACE__ . '\\' . 'runGame';
-    return startEngine(DESCRIPTION, $game);
+    startEngine(DESCRIPTION, $game);
 }
